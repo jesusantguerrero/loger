@@ -7,7 +7,7 @@ export default function Layout({ children }) {
         to: '/'
       }, {
           label: 'Meal Planer',
-          to: '/'
+          to: '/meals/planner'
         }, {
         label: 'Meals',
         to: '/meals'

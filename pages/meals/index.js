@@ -1,15 +1,19 @@
 import Layout from "../../components/layout"
+import SectionHeader from "../../components/molecules/sectionHeader"
 
 export default function Meals () {
+    const actions = {
+        addMeal: {
+            label: "Add Meal",
+            action: () => {
+                alert("Hola")
+            }
+        }
+    }
 return (
     <Layout>
         <main>
-            <header className="border flex justify-between py-4 bg-white shadow-sm rounded-2xl px-5 mt-2">
-                <h4 className="font-bold text-blue-700 text-lg">Meals</h4>
-                <div test-id="actions" className="actions">
-                    <button className="bg-pink-500 text-white px-5 py-1 rounded-lg hover:bg-opacity-75">Add meal</button>
-                </div>
-            </header>
+            <SectionHeader title="Meals" actions={actions} />
         </main>
     </Layout>
 )
