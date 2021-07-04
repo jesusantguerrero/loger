@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         to: '/meals'
       }, {
           label: 'Finance',
-          to: '/'
+          to: '/finance'
       }]
 
     return (
