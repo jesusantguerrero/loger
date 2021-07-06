@@ -4,9 +4,11 @@ import Layout from '../components/layout';
 import Button from '../components/atoms/button';
 import TransactionsTable from '../components/organisms/transactionsTable';
 import BudgetTracker from '../components/organisms/budgetTracker';
+import { useState } from 'react';
 
 export default function Home() {
-  const { firstName } = useUser()
+  const { firstName } = useUser();
+  const [selected, setSelected] = useState()
 
   return (
     <div>
@@ -18,8 +20,14 @@ export default function Home() {
       <Layout>
         <div className="flex space-x-10">
           <div className="w-9/12">
-            <BudgetTracker />
-            <TransactionsTable username={firstName} />
+            <BudgetTracker onSectionClick={(section) => setSelected(section)}>
+            { !selected ? null : <>
+                { selected != 'expenses' ? null : <TransactionsTable username={firstName} className="pt-3 mt-5" tableClass="px-0 mt-5" /> }
+                { selected != 'budget' ? null : <TransactionsTable label="Budget" username={firstName} className="pt-3 mt-5" tableClass="px-0 mt-5" /> }
+                <div className="py-3 mt-5 text-center" onClick={() => setSelected('')}> <Button>Show less</Button> </div>
+              </>
+            }
+            </BudgetTracker>
           </div>
           <div className="w-3/12">
               <div className="space-y-5">
