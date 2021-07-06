@@ -3,6 +3,7 @@ import SectionHeader from "../../components/molecules/sectionHeader"
 import SectionTitle from "../../components/atoms/sectionTitle"
 import FinanceCard from "../../components/molecules/financeCard"
 import TransactionCard from "../../components/molecules/transactionCard"
+import TransactionsTable from "../../components/organisms/transactionsTable"
 
 export default function Finance () {
     const actions = {
@@ -66,14 +67,7 @@ return (
                     </div>
                 </div>
                 <div className="w-6/12">
-                <div className="px-5 mt-5">
-                    <SectionTitle type="secondary">Transactions</SectionTitle>
-                    <div className="mt-5 bg-white border rounded-lg shadow-md">
-                        <TransactionCard title="MCTekk" subtitle="Pago de nomina" status="PAID" value="60,000.00" />
-                        <TransactionCard title="MCTekk" subtitle="Pago de nomina" status="PAID" value="60,000.00" />
-                        <TransactionCard title="MCTekk" subtitle="Pago de nomina" status="PAID" value="60,000.00" />
-                    </div>
-                </div>
+                    <TransactionsTable />
                 </div>
             </div>
         </main>
